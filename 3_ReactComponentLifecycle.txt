@@ -1,0 +1,56 @@
+happens only in class components
+
+classified into 4 (3 in assignment...error handling generally not counted)
+
+1. mounting - constructor, when comonent/DOM is beign created
+-> methods : constructor, static getDerivedStateFromProps, render and componentDidMount
+
+2. updating - when state or prop is changed
+-> methods : static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeUpdate and componentDidUpdate
+
+3. unmounting - when component is being removed from DOM..when component is out scope
+-> methods : componentWillUnmount
+
+4. error handling - if error in any of above three, then error handling occurs
+-> methods : static getDerivedStateFromError and componentDidCatch
+
+constructor(props) 
+    whenever we initialize a component
+    it should not cause sideeffect(means donot call api..http req dont do here)
+    super(props)
+
+static getDerivedStateFromProps(props,staate)
+    whenever prop or state is changed
+    dont cause sside effects(as it keeps calling again and again...so more load to api)
+
+render()
+    when event occurs, when 
+    children component lifecycle also executed
+    its there in both mounting and updating
+
+componentDidMount()
+    http req/asynchronous reqs/api calls do here...because its only called once
+    invodked immediately after a component and all its chldren components have been rendered to DOM
+
+UPDATING LIFE CYCLE
+
+static getDerivedStateFromProps(props,state)
+shoudlComponentUpdate(nextProps,nextState)
+render()
+    dont make ajax
+getSnapshotBeforeUpdate()
+    called just before updating(changes in virtual dom)
+componentDidUpdate()
+
+
+UNMOUNTING PHASE
+componentwWillunmount()
+    before a component is destroyed
+
+ERROR HANDLING PHASE
+
+static getDerivedStateFromError(error)
+
+componentDidCatch(error,info)
+
+    both occurs when error occurs in any of the phases

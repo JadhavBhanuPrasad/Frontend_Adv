@@ -1,0 +1,82 @@
+js framework(angular is ts)
+component based..each component has its own state
+single page application(same as angular)
+developed by fb
+ES-6
+
+doesnt use regular dom, it uses virtual dom(reference of original dom), so it passesd out, it knows where to go thats why it becomes faster, compares original with changed one and then does aa change
+everytime there is a change, virutal only changed but not original
+
+babel(compiler name)-> to transpile js syntax that can run in all environments(browser understandable language...like compatible for all edge,chrome,..etc) when writing react components
+type=text/babel
+converts latest version js code to traditional/old version js
+
+
+project name should be lowercase
+component name should start with uppercase
+To Create react project : 
+1. npx create-react-app -g 1_Project
+2. npm install create-react-app -> only first time
+   create-react-app projectname
+
+
+packgae.json -> has all dependencies
+
+
+index.html in public runs,which has div with id root
+index.js find root element and there is app selector there..there it renders
+then in app.js there is App() function which returns html, also there is export App in app.js so that it can be imported
+and also in index.js we have to import App from ./App
+
+default port : 3000(4000 for angular)
+
+class is written as className
+
+React components -> pointing to the UI of page
+
+1. Functional component...like App() in App.js
+
+    i. we write function
+    ii. stateless -> doesn't change the value(we cannot retain the value)...hooks to make stateful
+    iii. props are immutable
+    iv. to make functional components behave like class componenets we use hooks.
+
+    -> has function, can be same as file name..it always returns jsx
+    -> it can't return multiple tags, to return we need to have a parent tag which has all these html tags(like div) ... keep in '()' for multiline return
+    -> cannot retain the change
+    -> const {name,email} = props; -> destructuring 
+    -> prop.children -> to display written text inside sample
+
+
+    JSX - JavaScriptXml
+    -> jsx whatver we are returning from functional or class component
+    -> only one parent element can be returned
+    -> interpolate using '{}' bracket
+    -> inline style is not possible directly, <p style= {{'color':'red'}}>.. for one style  <p {{'color':'red' , 'background' : 'gold'}} > .. for multiple styles
+    ->camelcase
+    -> we have to className instead of class  
+    -> without jsx sytnax to return 'return React.createElement(element,attributes,content)'
+
+
+    PROPS(properties) : to send data from parent to child 
+    ->are passed into components
+    ->its immutable(in Function Component and Class Component)
+
+
+
+2. Class Component
+
+    i. we declare a class
+    ii. statefull -> to change a state use , this.setState({ fname : 'sam'}) ... it is asynchronous
+    iii. Props are immutable
+    iv. this
+
+    -> create a class which inherits from component classs
+    -> return render method with jsx
+    -> everytime the state changes or event is fired render is called
+    -> can retain the change
+    -> const {message} = this.props; -> destructing
+    -> this.prop.children -> to display written text inside sample
+    -> when we write constructor in classComponent, then we have to call Super()..its parent inside it 
+
+<> </> -> react.fragments...in return  instead of returning as a div we can use this in some cases
